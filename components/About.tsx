@@ -5,8 +5,8 @@ const About: React.FC = () => {
   // State for 4 images in the masonry grid
   const [aboutImages, setAboutImages] = useState([
     "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", // Headshot (Using existing)
-    "https://photos.app.goo.gl/BmpWfW3C76xYS2wx6", // User provided photo 1
-    "https://photos.app.goo.gl/BmpWfW3C76xYS2wx6", // User provided photo 2 (Replacing Unsplash)
+    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", // User provided photo 1
+    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", // User provided photo 2 (Replacing Unsplash)
     "https://photos.app.goo.gl/BmpWfW3C76xYS2wx6"  // User provided photo 3
   ]);
   
