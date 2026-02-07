@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Image as ImageIcon, ArrowRight, X, Play, Eye } from 'lucide-react';
+import { FileText, Image as ImageIcon, ArrowRight, X, Play, Eye, Instagram, Youtube } from 'lucide-react';
 
 const Acting: React.FC = () => {
   const [showDemoReel, setShowDemoReel] = useState(false);
@@ -9,12 +9,12 @@ const Acting: React.FC = () => {
 
   // Headshots Gallery
   const headshots = [
-    "https://photos.app.goo.gl/BmpWfW3C76xYS2wx6", // Green Shirt Headshot
-    "https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o", // Primary Headshot
-    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", // Secondary Headshot
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", // Placeholder 1
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80", // Placeholder 2
-    "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80"  // Placeholder 3
+    "https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o", // Top (Requested)
+    "https://lh3.googleusercontent.com/d/19rKXzae3e8rW7S5HAWcUHSOZl1e8_jRK", // Recent Headshot
+    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", // Third (Requested)
+    "https://lh3.googleusercontent.com/d/1QbxXNPeoSkatU6xzhwIa8vOqYgwRkYZJ", // New Headshot 1
+    "https://lh3.googleusercontent.com/d/1gzmpewQpiQANOS9arwapTIlZ6mPHeYPV", // New Headshot 2
+    "https://lh3.googleusercontent.com/d/1xTtVEpdozGuueSLiReiX-bQxANgICfNp"  // Bottom (Requested)
   ];
 
   return (
@@ -60,16 +60,35 @@ const Acting: React.FC = () => {
                     </button>
                 </div>
 
-                {/* Headshots */}
+                {/* Headshots Card - With Grid Preview */}
                 <button 
                     id="acting-headshots" 
                     onClick={() => setShowHeadshots(true)}
                     className="bg-slate-50 p-6 rounded-2xl border border-slate-100 scroll-mt-32 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col text-left w-full outline-none focus:ring-2 focus:ring-pastel-300"
                 >
-                    <div className="bg-white p-3 rounded-full w-fit mb-4 text-slate-700 shadow-sm group-hover:text-pastel-500 transition-colors">
-                        <ImageIcon size={20} />
+                    <h4 className="font-serif text-xl text-slate-800 mb-4">Headshots</h4>
+                    
+                    {/* Tiny Picture Grid Preview */}
+                    <div className="relative w-full aspect-video bg-white rounded-xl overflow-hidden mb-4 border border-slate-200">
+                        <div className="grid grid-cols-2 grid-rows-2 w-full h-full">
+                            {headshots.slice(0, 4).map((src, index) => (
+                                <div key={index} className="relative w-full h-full border-r border-b border-white/50">
+                                    <img 
+                                        src={src} 
+                                        alt={`Headshot preview ${index + 1}`} 
+                                        className="w-full h-full object-cover object-top opacity-95"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div className="bg-white/90 p-3 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                                <Eye size={24} className="text-slate-900" />
+                            </div>
+                        </div>
                     </div>
-                    <h4 className="font-serif text-xl text-slate-800 mb-2">Headshots</h4>
+
                     <p className="text-sm text-slate-500 mb-4 flex-grow">Professional theatrical and commercial headshots.</p>
                     <div className="text-sm font-semibold text-pastel-500 group-hover:text-pastel-600 flex items-center mt-auto group-hover:underline">
                         View Gallery <Eye size={14} className="ml-1" />
@@ -93,8 +112,34 @@ const Acting: React.FC = () => {
                 </button>
             </div>
 
-            {/* Request Audition - Moved Below Grid */}
-            <div className="flex justify-center pt-4">
+            {/* Request Audition & Socials - Container */}
+            <div className="flex flex-col items-center pt-8">
+                
+                {/* Acting Socials - Added here */}
+                <div className="flex flex-col items-center gap-3 mb-6">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Acting Socials</span>
+                    <div className="flex gap-6">
+                        <a 
+                            href="https://www.instagram.com/soraya.schwarzenecker" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-slate-400 hover:text-pastel-500 transition-all transform hover:scale-110 p-2 bg-slate-50 rounded-full hover:shadow-sm"
+                            title="Acting Instagram"
+                        >
+                            <Instagram size={24} />
+                        </a>
+                        <a 
+                            href="https://www.youtube.com/@sorayaschwarzenecker" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-slate-400 hover:text-pastel-500 transition-all transform hover:scale-110 p-2 bg-slate-50 rounded-full hover:shadow-sm"
+                            title="Acting YouTube"
+                        >
+                            <Youtube size={24} />
+                        </a>
+                    </div>
+                </div>
+
                  <a 
                     href="mailto:sorayacreates.ugc@gmail.com" 
                     className="inline-flex items-center px-8 py-3 rounded-full bg-slate-50 text-slate-800 font-semibold border border-slate-200 hover:bg-pastel-500 hover:text-white hover:border-pastel-500 transition-all duration-300 group shadow-sm"

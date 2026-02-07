@@ -20,16 +20,16 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-pastel-50 pt-24 md:pt-20 pb-12 overflow-hidden z-0">
+    <section className="relative min-h-screen flex items-start justify-center bg-pastel-50 pt-0 md:pt-20 pb-12 overflow-hidden z-0">
       {/* Abstract Background Shapes */}
       <div className="absolute top-10 left-10 w-64 h-16 bg-pastel-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div className="flex m-16 flex-col md:flex-row justify-between gap-8 md:gap-12">
+        <div className="flex flex-col-reverse md:flex-row justify-between gap-8 md:gap-12 my-8 md:m-16">
           
           {/* Left Column: Text & Info */}
-          <div className="flex-1 text-center md:text-left order-2 md:order-1">
+          <div className="flex-1 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-slate-500 mb-2 text-xs md:text-sm border border-white/50">
               <MapPin size={14} className="text-pastel-500" />
               <span>Arlington, Virginia (Northern Virginia)</span>
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Image */}
-          <div className="flex-1 w-full max-w-md md:max-w-lg relative order-1 md:order-2 group">
+          <div className="flex-1 w-2/3 md:w-full max-w-md md:max-w-lg relative group mx-auto md:mx-0">
              <div className="absolute inset-0 bg-pastel-200 rounded-[3rem] transform rotate-3 scale-105 z-0"></div>
              <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl aspect-[3/4] bg-slate-200">
                 <img 
@@ -145,16 +145,6 @@ const Hero: React.FC = () => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
                   }}
                 />
-                
-                {/* Edit Button Overlay */}
-                <button 
-                  onClick={handleEditClick}
-                  className="absolute bottom-6 right-6 bg-white/90 p-3 rounded-full text-slate-700 shadow-lg hover:bg-pastel-500 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 transform translate-y-4 group-hover:translate-y-0"
-                  aria-label="Change hero photo"
-                  title="Change Image URL"
-                >
-                  <Camera size={24} />
-                </button>
              </div>
           </div>
 
@@ -178,7 +168,7 @@ const Hero: React.FC = () => {
             
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-pastel-100 text-pastel-600 rounded-full">
-                <Camera size={24} />
+           
               </div>
               <h3 className="text-2xl font-serif font-bold text-slate-800">Update Hero Photo</h3>
             </div>

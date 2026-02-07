@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Camera, X } from 'lucide-react';
 
 const About: React.FC = () => {
-  // State for 4 images in the masonry grid
+  // State for images
   const [aboutImages, setAboutImages] = useState([
-    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", // Headshot (Using existing)
-    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", // User provided photo 1
-    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", // User provided photo 2 (Replacing Unsplash)
-    "https://photos.app.goo.gl/BmpWfW3C76xYS2wx6"  // User provided photo 3
+    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", 
+    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", 
+    "https://lh3.googleusercontent.com/pw/AP1GczMMzIPYOTwsWNc4ZCHXJeEWn7NRC7qWN-2Yy7Z_D0_d5QziPVYpqX0_kBLWo-YKQyT_B9jXys6yrupmfQgxVfd0EhDjVDlCTwPiKY5GlIWgCscI7fdYkcUIOV5VmaQJQ2oh1ou3FJrChfPB3JuXM3NOiQ=w1114-h1486-s-no-gm?authuser=0", 
+    "https://lh3.googleusercontent.com/pw/AP1GczOw79iTqoYDZT8OCvoB8I8amgPOE0pYYc-jCnXw2QxfmPyxFuy10Sdus1-nEcL0MGW0KYbNwXa4a8djgxVD7qf_IaXuCrYeDzf--FmEKXTF9E6skGLS1FoO0RpvDPf0wZuGlJU5OeA64_Cn9ECTOZidhg=w838-h1490-s-no-gm?authuser=0",  
+    "https://lh3.googleusercontent.com/pw/AP1GczOL5-usPK_Hf0jstY3YuBJh24yTkjVNOF79CzCN4O-H9Xoh-2sAQFQphPUO4dvgKhAZi1RC6uBZ5XNuz8Px8j19lCevRtxnNBNYaHtL4xy9c2uOEDlRffw9G4dXxRp9ifSbB7fmcp6P0v-30AhPP7_-2Q=w940-h1670-s-no-gm?authuser=0",
+    "https://lh3.googleusercontent.com/d/1ZJs-mmdQ8SZqtUK7bl208C4-YwwO829K"
   ]);
   
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -30,142 +32,198 @@ const About: React.FC = () => {
     setActiveImageIndex(null);
   };
 
-  return (
-    <section id="about" className="py-24 bg-white relative z-20">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* About Me Section - Side by Side */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-            
-            {/* Text Side */}
-            <div className="lg:w-1/2 order-2 lg:order-1 sticky top-24">
-                <h2 className="text-4xl md:text-5xl font-serif text-slate-800 mb-6 text-center lg:text-left">
-                    About Me
-                </h2>
-                <div className="w-20 h-1 bg-pastel-300 mb-8 mx-auto lg:mx-0"></div>
-                
-                <div className="text-slate-600 leading-relaxed text-lg space-y-6">
-                    {/* Fun Bubble Grid Layout */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        
-                        {/* 1. Bilingual (Swapped from position 4) */}
-                        <div className="bg-pastel-50 p-6 rounded-[2rem] border border-pastel-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:rotate-1">
-                            <div className="text-4xl mb-3">🌍</div>
-                            <h4 className="font-bold text-slate-800 text-lg mb-2 leading-tight">Bilingual (English & German)</h4>
-                            <p className="text-slate-600 text-sm leading-relaxed font-medium">UGC tailored for international and European markets</p>
-                        </div>
-                        
-                        {/* 2. Vegan */}
-                         <div className="bg-white p-6 rounded-[2rem] border-2 border-slate-100 hover:border-pastel-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:-rotate-1">
-                            <div className="text-4xl mb-3">🌱</div>
-                            <h4 className="font-bold text-slate-800 text-lg mb-2 leading-tight">Vegan lifestyle</h4>
-                            <p className="text-slate-600 text-sm leading-relaxed font-medium">Great fit for plant-based, wellness, and conscious brands</p>
-                        </div>
+  // Helper component for Images to reduce duplication
+  const AboutImage = ({ index, className }: { index: number, className: string }) => (
+    <div className={`relative group overflow-hidden shadow-lg border-[3px] md:border-[6px] border-white transition-all duration-500 hover:z-20 hover:scale-105 hover:shadow-2xl ${className}`}>
+        <img 
+            src={aboutImages[index]} 
+            alt={`About ${index + 1}`} 
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+        />
+    </div>
+  );
 
-                        {/* 3. Dramatic Arts (Full Width Highlight) */}
-                        <div className="sm:col-span-2 bg-gradient-to-br from-white to-pastel-50 p-6 rounded-[2rem] border border-pastel-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group">
+  return (
+    <section id="about" className="py-12 md:py-32 bg-white relative z-20 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-40 left-0 w-96 h-96 bg-pastel-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-[30rem] h-[30rem] bg-pink-50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 -z-10 delay-700"></div>
+
+      <div className="max-w-[90rem] mx-auto px-4 md:px-8">
+        
+        {/* DESKTOP LAYOUT (Hidden on mobile) */}
+        <div className="hidden md:flex flex-row gap-6 lg:gap-16 items-start">
+             {/* Text Side */}
+            <div className="w-[40%] sticky top-24 z-10">
+                <h2 className="text-6xl font-serif text-slate-800 mb-10 text-left relative inline-block">
+                    About Me
+                    <span className="absolute -bottom-2 left-0 w-full h-3 bg-pastel-200/40 -z-10 rounded-full transform -rotate-1"></span>
+                </h2>
+                
+                <div className="text-slate-600 leading-relaxed space-y-8">
+                    <div className="grid grid-cols-2 gap-6">
+                        {/* 1. Bilingual */}
+                        <div className="bg-pastel-50 p-8 rounded-[2rem] border border-pastel-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:rotate-1 group">
+                            <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">🌍</div>
+                            <h4 className="font-bold text-slate-800 text-xl mb-3 leading-tight">Bilingual (English & German)</h4>
+                            <p className="text-slate-600 text-base leading-relaxed font-medium">UGC tailored for international and European markets</p>
+                        </div>
+                        {/* 2. Vegan */}
+                         <div className="bg-white p-8 rounded-[2rem] border-2 border-slate-100 hover:border-pastel-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 group">
+                            <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">🌱</div>
+                            <h4 className="font-bold text-slate-800 text-xl mb-3 leading-tight">Vegan lifestyle</h4>
+                            <p className="text-slate-600 text-base leading-relaxed font-medium">Great fit for plant-based, wellness, and conscious brands</p>
+                        </div>
+                        {/* 3. Dramatic Arts */}
+                        <div className="col-span-2 bg-gradient-to-br from-white to-pastel-50 p-8 rounded-[2rem] border border-pastel-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group">
                              <div className="absolute -right-4 -top-4 opacity-10 group-hover:opacity-20 transition-opacity transform rotate-12 pointer-events-none">
                                 <span className="text-9xl">🎭</span>
                              </div>
-                            <div className="relative z-10 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-                                <div className="text-5xl shrink-0">🎭</div>
+                            <div className="relative z-10 flex flex-row gap-6 items-center">
+                                <div className="text-6xl shrink-0 group-hover:rotate-12 transition-transform duration-500">🎭</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-800 text-xl mb-1">Trained in Dramatic Arts</h4>
-                                    <p className="text-slate-700 font-medium leading-relaxed">Strong on-camera presence, storytelling, and confident delivery</p>
+                                    <h4 className="font-bold text-slate-800 text-2xl mb-2">Trained in Dramatic Arts</h4>
+                                    <p className="text-slate-700 text-lg font-medium leading-relaxed">Strong on-camera presence, storytelling, and confident delivery</p>
                                 </div>
                             </div>
                         </div>
-
-                        {/* 4. Married Creator (Swapped from position 1) */}
-                        <div className="sm:col-span-2 bg-white p-6 rounded-[2rem] border border-slate-200 hover:border-pastel-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-                                <div className="text-4xl shrink-0 bg-pastel-50 p-3 rounded-full shadow-sm">💍</div>
+                        {/* 4. Married Creator */}
+                        <div className="col-span-2 bg-white p-8 rounded-[2rem] border border-slate-200 hover:border-pastel-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                            <div className="flex flex-row gap-6 items-center">
+                                <div className="text-4xl shrink-0 bg-pastel-50 p-4 rounded-full shadow-sm group-hover:scale-110 transition-transform">💍</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-800 text-lg mb-1">Married creator</h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed font-medium">(My husband is also a creator and can appear in content!)</p>
+                                    <h4 className="font-bold text-slate-800 text-xl mb-2">Married creator</h4>
+                                    <p className="text-slate-600 text-base leading-relaxed font-medium">(My husband is also a creator and can appear in content!)</p>
                                 </div>
                             </div>
                         </div>
-
-                        {/* 5. World Traveler (Full Width) */}
-                        <div className="sm:col-span-2 bg-slate-50 p-6 rounded-[2rem] border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-                                <div className="text-4xl shrink-0 bg-white p-3 rounded-full shadow-sm">✈️</div>
+                        {/* 5. World Traveler */}
+                        <div className="col-span-2 bg-slate-50 p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                            <div className="flex flex-row gap-6 items-center">
+                                <div className="text-4xl shrink-0 bg-white p-4 rounded-full shadow-sm group-hover:rotate-12 transition-transform">✈️</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-800 text-lg mb-1">World traveler</h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed font-medium">Currently exploring Europe (Austria, Switzerland & more) — happy to bring your product along on my journeys</p>
+                                    <h4 className="font-bold text-slate-800 text-xl mb-2">World traveler</h4>
+                                    <p className="text-slate-600 text-base leading-relaxed font-medium">Currently exploring Europe (Austria, Switzerland & more) — happy to bring your product along on my journeys</p>
                                 </div>
                             </div>
                         </div>
-
-                        {/* 6. Outdoor Obsessed (Full Width) */}
-                        <div className="sm:col-span-2 bg-pastel-50 p-6 rounded-[2rem] border border-pastel-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-                                <div className="text-4xl shrink-0 bg-white p-3 rounded-full shadow-sm">🌊</div>
+                        {/* 6. Outdoor Obsessed */}
+                        <div className="col-span-2 bg-pastel-50 p-8 rounded-[2rem] border border-pastel-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                            <div className="flex flex-row gap-6 items-center">
+                                <div className="text-4xl shrink-0 bg-white p-4 rounded-full shadow-sm group-hover:scale-110 transition-transform">🌊</div>
                                 <div>
-                                    <h4 className="font-bold text-slate-800 text-lg mb-1">Outdoor-obsessed</h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed font-medium">Hiking, surfing, ocean days, rollerblading, and active lifestyle content in natural settings</p>
+                                    <h4 className="font-bold text-slate-800 text-xl mb-2">Outdoor-obsessed</h4>
+                                    <p className="text-slate-600 text-base leading-relaxed font-medium">Hiking, surfing, and active lifestyle content in natural settings</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
 
-            {/* Image Side - Masonry Grid */}
-            <div className="lg:w-1/2 w-full order-1 lg:order-2">
-                <div className="grid grid-cols-2 gap-4 md:gap-6">
-                    {/* Column 1 - Starts Lower for Masonry Effect */}
-                    <div className="space-y-4 md:space-y-6 pt-8 md:pt-12">
-                        <div className="relative group rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-[3/4]">
-                            <img 
-                                src={aboutImages[0]} 
-                                alt="Soraya Headshot" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <button onClick={() => handleEditClick(0)} className="absolute bottom-3 right-3 bg-white/90 p-2 rounded-full text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                                <Camera size={16} />
-                            </button>
-                        </div>
-                        <div className="relative group rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-square">
-                            <img 
-                                src={aboutImages[2]} 
-                                alt="Lifestyle Photo" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                            />
-                             <button onClick={() => handleEditClick(2)} className="absolute bottom-3 right-3 bg-white/90 p-2 rounded-full text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                                <Camera size={16} />
-                            </button>
-                        </div>
+             {/* Image Side - DESKTOP - SCATTERED GRID */}
+            <div className="w-[60%] relative">
+                <div className="grid grid-cols-2 gap-8 px-12">
+                    {/* Column 1 - Starts Lower */}
+                    <div className="space-y-14 pt-20">
+                        {/* Image 0 (Requested Top Image) - Slight right tilt */}
+                        <AboutImage index={0} className="rounded-3xl aspect-[3/4] rotate-3 hover:rotate-0" />
+                        
+                        {/* Image 2 - Pushed left, slight left tilt */}
+                        <AboutImage index={2} className="rounded-3xl aspect-square -translate-x-8 -rotate-2 hover:rotate-0 hover:translate-x-0" />
+                        
+                        {/* Image 5 (NEW) - Portrait, slight right tilt */}
+                        <AboutImage index={5} className="rounded-3xl aspect-[3/4] rotate-6 translate-x-4 hover:rotate-0 hover:translate-x-0" />
                     </div>
 
-                    {/* Column 2 */}
-                    <div className="space-y-4 md:space-y-6">
-                        <div className="relative group rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-square">
-                            <img 
-                                src={aboutImages[1]} 
-                                alt="Lifestyle Photo" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                            />
-                             <button onClick={() => handleEditClick(1)} className="absolute bottom-3 right-3 bg-white/90 p-2 rounded-full text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                                <Camera size={16} />
-                            </button>
-                        </div>
-                        <div className="relative group rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-[3/4]">
-                            <img 
-                                src={aboutImages[3]} 
-                                alt="Lifestyle Photo" 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                            />
-                             <button onClick={() => handleEditClick(3)} className="absolute bottom-3 right-3 bg-white/90 p-2 rounded-full text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                                <Camera size={16} />
-                            </button>
-                        </div>
+                    {/* Column 2 - Starts Higher */}
+                    <div className="space-y-14 -mt-12">
+                        {/* Image 1 - Square, sharp left tilt */}
+                        <AboutImage index={1} className="rounded-3xl aspect-square -rotate-6 hover:rotate-0" />
+                        
+                        {/* Image 3 - Portrait, pushed down, sharp right tilt */}
+                        <AboutImage index={3} className="rounded-3xl aspect-[3/4] translate-y-8 rotate-3 hover:rotate-0 hover:translate-y-0" />
+                        
+                        {/* Image 4 - Tall, neutral but pushed right */}
+                        <AboutImage index={4} className="rounded-3xl aspect-[9/16] -rotate-3 translate-x-6 hover:rotate-0 hover:translate-x-0" />
                     </div>
                 </div>
             </div>
         </div>
+
+        {/* MOBILE LAYOUT (Visible only on md hidden) - REVERTED TO SIDE-BY-SIDE */}
+        <div className="md:hidden flex flex-col mt-4">
+             <h2 className="text-4xl font-serif text-slate-800 mb-6 relative z-20">
+                 About Me
+                 <div className="w-16 h-1 bg-pastel-300 mt-2 rounded-full"></div>
+             </h2>
+
+            <div className="flex flex-row gap-3 items-start">
+                {/* Left Side: Text Cards (Vertical Column) */}
+                <div className="w-[60%] flex flex-col gap-3">
+                     {/* 1. Bilingual */}
+                     <div className="bg-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
+                         <div className="text-2xl mb-1">🌍</div>
+                         <h4 className="font-bold text-slate-800 text-sm mb-1">Bilingual (English & German)</h4>
+                         <p className="text-slate-600 text-xs leading-tight">UGC tailored for international and European markets</p>
+                     </div>
+
+                     {/* 2. Vegan */}
+                     <div className="bg-white p-4 rounded-xl border-2 border-slate-100 shadow-sm">
+                         <div className="text-2xl mb-1">🌱</div>
+                         <h4 className="font-bold text-slate-800 text-sm mb-1">Vegan lifestyle</h4>
+                         <p className="text-slate-600 text-xs leading-tight">Great fit for plant-based, wellness, and conscious brands</p>
+                     </div>
+
+                     {/* 3. Dramatic Arts */}
+                     <div className="bg-gradient-to-br from-white to-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
+                         <div className="text-2xl mb-1">🎭</div>
+                         <h4 className="font-bold text-slate-800 text-sm mb-1">Trained in Dramatic Arts</h4>
+                         <p className="text-slate-700 text-xs leading-tight">Strong on-camera presence, storytelling, and confident delivery</p>
+                     </div>
+
+                     {/* 4. Married Creator */}
+                     <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                        <div className="text-2xl mb-1">💍</div>
+                        <h4 className="font-bold text-slate-800 text-sm mb-1">Married creator</h4>
+                        <p className="text-slate-600 text-xs leading-tight">(My husband is also a creator and can appear in content!)</p>
+                     </div>
+
+                     {/* 5. World Traveler */}
+                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-sm">
+                        <div className="text-2xl mb-1">✈️</div>
+                        <h4 className="font-bold text-slate-800 text-sm mb-1">World traveler</h4>
+                        <p className="text-slate-600 text-xs leading-tight">Currently exploring Europe (Austria, Switzerland & more) — happy to bring your product along on my journeys</p>
+                     </div>
+
+                     {/* 6. Outdoor Obsessed */}
+                     <div className="bg-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
+                        <div className="text-2xl mb-1">🌊</div>
+                        <h4 className="font-bold text-slate-800 text-sm mb-1">Outdoor-obsessed</h4>
+                        <p className="text-slate-600 text-xs leading-tight">Hiking, surfing, and active lifestyle content in natural settings</p>
+                     </div>
+                </div>
+
+                {/* Right Side: Images (Vertical Stack) */}
+                <div className="w-[40%] flex flex-col gap-4 pt-2">
+                     {/* Image 0: The specific picture requested to be always on top */}
+                     <AboutImage index={0} className="w-full aspect-[3/4] rotate-2 rounded-xl shadow-md" />
+                     
+                     {/* 2nd: Image 4 (Tall) */}
+                     <AboutImage index={4} className="w-[85%] aspect-[9/16] -rotate-3 rounded-xl shadow-md self-end" />
+                     
+                     {/* 3rd: Image 2 (Requested to follow Image 4) */}
+                     <AboutImage index={2} className="w-[90%] aspect-square rotate-2 rounded-xl shadow-md self-center" />
+
+                     {/* 4th: Image 1 (Requested as 4th) */}
+                     <AboutImage index={1} className="w-[80%] aspect-square -rotate-2 rounded-xl shadow-md self-start" />
+                     
+                     {/* 5th: Image 3 (Index 5 removed per request) */}
+                     <AboutImage index={3} className="w-[85%] aspect-[3/4] -rotate-1 rounded-xl shadow-md self-center" />
+                </div>
+            </div>
+        </div>
+
       </div>
 
       {/* Edit Image Modal */}
