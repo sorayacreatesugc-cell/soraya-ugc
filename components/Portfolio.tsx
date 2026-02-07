@@ -34,8 +34,45 @@ const videoItems = [
   },
 ];
 
-// Empty array as requested to remove example pictures
-const imageItems: PortfolioItem[] = [];
+// Updated image items with new photos
+const imageItems: PortfolioItem[] = [
+  {
+    id: 1,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczPgHYryFBVbu0WKyMCoU8K-0gJnfXpBlnE4y2zZmWwjzkLcHPzZ_xUU1ZpGb1Zs-TK0s12a_orHkSWpI1icklV5EUPYRV1o_qVmNcVIXP6yXQseu-6YkaMSoDdIf1nEJd11NvrkZ73EmKCvIoyfwTnZKw=w1170-h1486-s-no-gm?authuser=0',
+    caption: 'Lifestyle'
+  },
+  {
+    id: 2,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczMGmbMT_wuiU8N9ByOpm79wIR304_iJ5aMRp4rJdDIRnaBvbY4GuKuUW73SEdJW71QcyOmMSTpM8LidfTjFv2HgiMQs1aWyWnfXbY7zk1dbyidg3d96pXMRMMxRfl5Z4gyvfBP3qxK3fHVNuJAu3bqUVA=w938-h1467-s-no-gm?authuser=0',
+    caption: 'Travel'
+  },
+  {
+    id: 3,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczNx_H6fb3t8HRLvZ0zbLXAdNWjBd568t918Py6_yhlIQzudawH_dVM-A7l6lUUyx2hdmN9Rd90uTPzCKdNr0GLRDJwZazv_pjmCk4d_3by0xCw1n3vtys0g8gT3bW9uV99o-ho0ecNXED_9G63-J_nG9w=w1118-h1486-s-no-gm?authuser=0',
+    caption: 'Fashion'
+  },
+  {
+    id: 4,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczMj_UITBB8cO3meU4Kx8LOZiSO_vVIi-cGFBGGlWq2XCXQV0DB1xNiis4cgsYqIOw9CnvFT2rXUNvYeBaJPY5JGx9jtL1Or7ZvFMfaDNIi0GR4N2KLerYJIOjQGsMTJTaw1s0j-urWL4gHsAaZnsrFScA=w876-h1486-s-no-gm?authuser=0',
+    caption: 'Product'
+  },
+  {
+    id: 5,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczNVkmqTZLyDhmJ9M5ut-dlgCi02-n90B7iTiCwvfGdMKLV6nlRl_9YqCjUm1_2AyWiMoz99hdzCf7WFGhqQUAG1F2ZmE6rnWf-wvniNJd--HU0hijcizWBinq8_6hzFfQo7wm4EnDz-XkGqA8g9rH3VOg=w864-h1486-s-no-gm?authuser=0',
+    caption: 'Aesthetic'
+  },
+  {
+    id: 6,
+    type: 'image',
+    src: 'https://lh3.googleusercontent.com/pw/AP1GczMOn2q11KxQJe9wpD6Z0hF0znrx_7uUNqNj_GaldvDIuibCnctEo32D05JJEjp-xtVnpM5NYB4wyCvEliaaOMJibbQDW040qj4qsXHtjrUegHuh8PKUle75Ojcxr2vDgRv7suXN2yb82h90ySr6c9YUDQ=w1060-h1448-s-no-gm?authuser=0',
+    caption: 'Vlog'
+  }
+];
 
 const trustPoints = [
     { title: "UGC Creator & On-Camera Talent", desc: "Creating authentic, scroll-stopping content brands can trust." },
@@ -115,26 +152,42 @@ const Portfolio: React.FC = () => {
           <div className="text-center mb-12">
             <span className="inline-block text-xs font-bold text-pastel-500 uppercase tracking-widest mb-3">Portfolio</span>
             <h2 className="text-4xl md:text-5xl font-serif text-slate-800 mb-4">UGC Photos</h2>
-            <p className="text-slate-500 max-w-lg mx-auto">Aesthetic photography for feeds, ads, and website assets.</p>
+            <p className="text-slate-500 italic">Mood Board & Aesthetic</p>
           </div>
 
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-12 items-center justify-items-center">
             {imageItems.length > 0 ? (
-                imageItems.map((item) => (
-                <div key={item.id} className="relative group overflow-hidden rounded-2xl break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-300">
-                    <img 
-                    src={item.src} 
-                    alt={item.caption} 
-                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="bg-white/90 px-6 py-2 rounded-full text-slate-900 font-medium backdrop-blur-sm">View</span>
-                    </div>
-                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white font-medium tracking-wide">{item.caption}</p>
-                    </div>
-                </div>
-                ))
+                imageItems.map((item, index) => {
+                    // Mood Board Style Classes - More exaggerated scattering
+                    let transformClass = "";
+                    
+                    // Specific rotations for a scattered "tabletop" look
+                    switch(index) {
+                        case 0: transformClass = "rotate-3 translate-y-2"; break;
+                        case 1: transformClass = "-rotate-3 translate-y-12"; break; 
+                        case 2: transformClass = "rotate-6 -translate-x-4"; break;
+                        case 3: transformClass = "-rotate-2 translate-x-4 translate-y-8"; break;
+                        case 4: transformClass = "rotate-3 translate-y-16"; break; 
+                        case 5: transformClass = "-rotate-6 -translate-y-4"; break;
+                        default: transformClass = "rotate-0";
+                    }
+
+                    return (
+                        <div key={item.id} className={`relative group transition-all duration-500 ease-out transform ${transformClass} hover:z-50 hover:scale-110 hover:rotate-0 w-full`}>
+                            <div className="relative overflow-hidden bg-white shadow-lg group-hover:shadow-2xl transition-all duration-300 border-[12px] border-white/90">
+                                <img 
+                                    src={item.src} 
+                                    alt={item.caption} 
+                                    className="w-full h-auto object-cover"
+                                />
+                                {/* No hover labels or buttons */}
+                            </div>
+                            
+                            {/* Tape Effect */}
+                            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-28 h-8 bg-white/40 backdrop-blur-sm rotate-1 shadow-sm border border-white/30 z-10"></div>
+                        </div>
+                    );
+                })
             ) : (
                 <div className="col-span-full py-12 text-center border-2 border-dashed border-slate-200 rounded-3xl">
                      <p className="text-slate-400 italic">Photos coming soon...</p>
