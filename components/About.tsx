@@ -103,7 +103,7 @@ const About: React.FC = () => {
                                 <div className="text-4xl shrink-0 bg-white p-4 rounded-full shadow-sm group-hover:rotate-12 transition-transform">✈️</div>
                                 <div>
                                     <h4 className="font-bold text-slate-800 text-xl mb-2">World traveler</h4>
-                                    <p className="text-slate-600 text-base leading-relaxed font-medium">Currently exploring Europe (Austria, Switzerland & more) — happy to bring your product along on my journeys</p>
+                                    <p className="text-slate-600 text-base leading-relaxed font-medium">Always planning my next adventure — this year through Europe (Austria, Switzerland & more). I’d love to bring your product along for the journey!</p>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ const About: React.FC = () => {
                      <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-sm">
                         <div className="text-2xl mb-1">✈️</div>
                         <h4 className="font-bold text-slate-800 text-sm mb-1">World traveler</h4>
-                        <p className="text-slate-600 text-xs leading-tight">Currently exploring Europe (Austria, Switzerland & more) — happy to bring your product along on my journeys</p>
+                        <p className="text-slate-600 text-xs leading-tight">Always planning my next adventure — this year through Europe (Austria, Switzerland & more). I’d love to bring your product along for the journey!</p>
                      </div>
 
                      {/* 6. Outdoor Obsessed */}

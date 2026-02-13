@@ -12,6 +12,13 @@ const videoItems = [
     label: 'Travel'
   },
   { 
+    id: 4, 
+    src: 'https://img.youtube.com/vi/_x627w4h9l8/maxresdefault.jpg', 
+    link: 'https://youtube.com/shorts/_x627w4h9l8?feature=share',
+    caption: 'App Showcase', 
+    label: 'Apps'
+  },
+  { 
     id: 2, 
     src: 'https://img.youtube.com/vi/eNpEmXCd18k/maxresdefault.jpg', 
     link: 'https://youtube.com/shorts/eNpEmXCd18k?feature=share',
@@ -34,7 +41,7 @@ const videoItems = [
   },
 ];
 
-// Updated image items with new photos
+// Updated image items with photos
 const imageItems: PortfolioItem[] = [
   {
     id: 1,
@@ -105,7 +112,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <section className="py-24 bg-pastel-50">
-      <div className="max-w-6xl mx-auto px-6 space-y-24">
+      <div className="max-w-7xl mx-auto px-6 space-y-24">
         
         {/* Videos Section */}
         <div id="ugc-videos" className="scroll-mt-24">
@@ -115,12 +122,12 @@ const Portfolio: React.FC = () => {
             <p className="text-slate-500 max-w-lg mx-auto">High-performing reels and tiktoks optimized for conversion.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
             {videoItems.map((item) => {
               return (
                 <div key={item.id} className="flex flex-col gap-4">
                   {/* Label Above Video */}
-                  <h3 className="text-center font-serif text-xl md:text-2xl text-slate-800 tracking-tight">
+                  <h3 className="text-center font-serif text-lg md:text-xl text-slate-800 tracking-tight h-14 flex items-center justify-center leading-tight">
                     {item.label}
                   </h3>
                   
@@ -158,10 +165,9 @@ const Portfolio: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-12 items-center justify-items-center">
             {imageItems.length > 0 ? (
                 imageItems.map((item, index) => {
-                    // Mood Board Style Classes - More exaggerated scattering
+                    // Mood Board Style Classes - Scattered and Tilted
                     let transformClass = "";
                     
-                    // Specific rotations for a scattered "tabletop" look
                     switch(index) {
                         case 0: transformClass = "rotate-3 translate-y-2"; break;
                         case 1: transformClass = "-rotate-3 translate-y-12"; break; 
@@ -180,7 +186,7 @@ const Portfolio: React.FC = () => {
                                     alt={item.caption} 
                                     className="w-full h-auto object-cover"
                                 />
-                                {/* No hover labels or buttons */}
+                                {/* No labels or buttons on hover */}
                             </div>
                             
                             {/* Tape Effect */}
