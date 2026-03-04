@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowDown, MapPin, Instagram, Mail, Youtube, Camera, X } from 'lucide-react';
 
-const driveImage = (id: string) => `https://drive.google.com/uc?export=view&id=${id}`;
+const driveImage = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 const Hero: React.FC = () => {
   // Initial placeholder image - pink background headshot
