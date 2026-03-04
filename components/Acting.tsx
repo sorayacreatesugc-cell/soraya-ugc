@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FileText, Image as ImageIcon, ArrowRight, X, Play, Eye, Instagram, Youtube } from 'lucide-react';
 
+const driveImage = (id: string) => `https://drive.google.com/uc?export=view&id=${id}`;
+
 const Acting: React.FC = () => {
   const [showDemoReel, setShowDemoReel] = useState(false);
   const [showResume, setShowResume] = useState(false);
@@ -9,12 +11,12 @@ const Acting: React.FC = () => {
 
   // Headshots Gallery
   const headshots = [
-    "https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o", // Top (Requested)
-    "https://lh3.googleusercontent.com/d/19rKXzae3e8rW7S5HAWcUHSOZl1e8_jRK", // Recent Headshot
-    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", // Third (Requested)
-    "https://lh3.googleusercontent.com/d/1QbxXNPeoSkatU6xzhwIa8vOqYgwRkYZJ", // New Headshot 1
-    "https://lh3.googleusercontent.com/d/1gzmpewQpiQANOS9arwapTIlZ6mPHeYPV", // New Headshot 2
-    "https://lh3.googleusercontent.com/d/1xTtVEpdozGuueSLiReiX-bQxANgICfNp"  // Bottom (Requested)
+    driveImage("1XbT59iQUU0-kAGBbqor1sxDgydY9St7o"), // Top (Requested)
+    driveImage("19rKXzae3e8rW7S5HAWcUHSOZl1e8_jRK"), // Recent Headshot
+    driveImage("1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_"), // Third (Requested)
+    driveImage("1QbxXNPeoSkatU6xzhwIa8vOqYgwRkYZJ"), // New Headshot 1
+    driveImage("1gzmpewQpiQANOS9arwapTIlZ6mPHeYPV"), // New Headshot 2
+    driveImage("1xTtVEpdozGuueSLiReiX-bQxANgICfNp")  // Bottom (Requested)
   ];
 
   return (
@@ -141,7 +143,7 @@ const Acting: React.FC = () => {
                 </div>
 
                  <a 
-                    href="mailto:sorayacreates.ugc@gmail.com" 
+                    href="mailto:soraya@soraya-schwarzenecker.com" 
                     className="inline-flex items-center px-8 py-3 rounded-full bg-slate-50 text-slate-800 font-semibold border border-slate-200 hover:bg-pastel-500 hover:text-white hover:border-pastel-500 transition-all duration-300 group shadow-sm"
                  >
                      Request Audition <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -167,7 +169,7 @@ const Acting: React.FC = () => {
                     <X size={20} />
                 </button>
                 <iframe
-                    src={`https://www.youtube.com/embed/${demoReelId}?autoplay=1&rel=0&modestbranding=1`}
+                    src={`https://www.youtube.com/embed/${demoReelId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`}
                     title="Acting Demo Reel"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -184,7 +186,7 @@ const Acting: React.FC = () => {
             onClick={() => setShowHeadshots(false)}
         >
             <div 
-                className="relative w-full max-w-5xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-5xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] max-h-[90dvh]"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Modal Header */}
@@ -224,7 +226,7 @@ const Acting: React.FC = () => {
             onClick={() => setShowResume(false)}
         >
             <div 
-                className="relative w-full max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                className="relative w-full max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] max-h-[90dvh]"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Modal Header */}

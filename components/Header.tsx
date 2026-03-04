@@ -20,15 +20,35 @@ const Header: React.FC = () => {
     { name: 'Connect', href: '#contact' },
   ];
 
-  // Prevent scrolling when menu is open
+  // Prevent background scroll (especially iOS/iPad Safari) when menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+    if (!isMobileMenuOpen) {
+      return;
     }
+
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    const originalStyles = {
+      overflow: style.overflow,
+      position: style.position,
+      top: style.top,
+      width: style.width,
+      touchAction: style.touchAction,
+    };
+
+    style.overflow = 'hidden';
+    style.position = 'fixed';
+    style.top = `-${scrollY}px`;
+    style.width = '100%';
+    style.touchAction = 'none';
+
     return () => {
-      document.body.style.overflow = '';
+      style.overflow = originalStyles.overflow;
+      style.position = originalStyles.position;
+      style.top = originalStyles.top;
+      style.width = originalStyles.width;
+      style.touchAction = originalStyles.touchAction;
+      window.scrollTo(0, scrollY);
     };
   }, [isMobileMenuOpen]);
 
@@ -66,12 +86,12 @@ const Header: React.FC = () => {
 
   return (
     <header 
-      className="sticky md:fixed top-0 w-full z-50 transition-all duration-300"
+      className="site-header sticky desktop:fixed top-0 w-full z-50 transition-all duration-300"
     >
       {/* Background layer with blur - separated to avoid containing block issues for fixed children */}
       <div className="absolute inset-0 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm -z-10" />
 
-      <div className="w-full px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 desktop:px-12 h-16 desktop:h-20 flex items-center justify-between">
         
         {/* Logo */}
         <div className="flex-shrink-0 z-[60]">
@@ -81,7 +101,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden desktop:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href;
@@ -108,14 +128,14 @@ const Header: React.FC = () => {
              <a href="https://www.youtube.com/channel/UC6ScBs4Uj0XFvGRiCqscTCA" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pastel-500 transition-colors" title="UGC YouTube">
               <Youtube size={18} />
             </a>
-            <a href="mailto:sorayacreates.ugc@gmail.com" className="text-slate-400 hover:text-pastel-500 transition-colors" title="Email Me">
+            <a href="mailto:soraya@soraya-schwarzenecker.com" className="text-slate-400 hover:text-pastel-500 transition-colors" title="Email Me">
               <Mail size={18} />
             </a>
           </div>
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-4 z-[60]">
+        <div className="desktop:hidden flex items-center gap-4 z-[60]">
              <a href="https://www.instagram.com/sorayacreates_ugc/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pastel-500 transition-colors">
                 <Instagram size={20} />
             </a>
@@ -130,15 +150,15 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Backdrop */}
         <div 
-            className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            className={`fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 transition-opacity duration-300 desktop:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             onClick={() => setIsMobileMenuOpen(false)}
         />
 
         {/* Mobile Navigation Drawer */}
         <div 
-            className={`fixed top-0 right-0 h-screen w-auto bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out md:hidden flex flex-col pt-24 pl-12 pr-6 border-l border-slate-100 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`fixed top-0 right-0 h-screen h-[100dvh] w-[85vw] max-w-[22rem] bg-white z-50 shadow-2xl transform transition-transform duration-300 ease-out desktop:hidden flex flex-col pt-24 pl-10 pr-6 border-l border-slate-100 overscroll-contain ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-            <div className="flex flex-col space-y-6 items-start overflow-y-auto h-full pb-8 whitespace-nowrap">
+            <div className="safe-bottom-pad flex flex-col space-y-6 items-start overflow-y-auto h-full whitespace-nowrap">
                 {navLinks.map((link) => {
                   const isActive = activeSection === link.href;
                   return (
@@ -163,7 +183,7 @@ const Header: React.FC = () => {
                      <a href="https://www.youtube.com/channel/UC6ScBs4Uj0XFvGRiCqscTCA" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pastel-500 transition-colors">
                       <Youtube size={24} />
                     </a>
-                    <a href="mailto:sorayacreates.ugc@gmail.com" className="text-slate-400 hover:text-pastel-500 transition-colors">
+                    <a href="mailto:soraya@soraya-schwarzenecker.com" className="text-slate-400 hover:text-pastel-500 transition-colors">
                       <Mail size={24} />
                     </a>
                  </div>

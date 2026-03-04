@@ -122,12 +122,12 @@ const Portfolio: React.FC = () => {
             <p className="text-slate-500 max-w-lg mx-auto">High-performing reels and tiktoks optimized for conversion.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
             {videoItems.map((item) => {
               return (
                 <div key={item.id} className="flex flex-col gap-4">
                   {/* Label Above Video */}
-                  <h3 className="text-center font-serif text-lg md:text-xl text-slate-800 tracking-tight h-14 flex items-center justify-center leading-tight">
+                  <h3 className="text-center font-serif text-base sm:text-lg md:text-xl text-slate-800 tracking-tight h-14 flex items-center justify-center leading-tight">
                     {item.label}
                   </h3>
                   
@@ -234,7 +234,7 @@ const Portfolio: React.FC = () => {
             onClick={() => setActiveVideoId(null)}
         >
             <div 
-                className="relative w-full max-w-sm aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl"
+                className="relative w-full max-w-sm sm:max-w-md aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ArrowDown, MapPin, Instagram, Mail, Youtube, Camera, X } from 'lucide-react';
 
+const driveImage = (id: string) => `https://drive.google.com/uc?export=view&id=${id}`;
+
 const Hero: React.FC = () => {
   // Initial placeholder image - pink background headshot
-  const [heroImage, setHeroImage] = useState("https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o");
+  const [heroImage, setHeroImage] = useState(driveImage("1XbT59iQUU0-kAGBbqor1sxDgydY9St7o"));
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [tempImageInput, setTempImageInput] = useState("");
 
@@ -20,16 +22,16 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center bg-pastel-50 pt-0 md:pt-20 pb-12 overflow-hidden z-0">
+    <section className="relative min-h-screen min-h-[100svh] flex items-start justify-center bg-pastel-50 pt-0 desktop:pt-20 pb-12 overflow-hidden z-0">
       {/* Abstract Background Shapes */}
       <div className="absolute top-10 left-10 w-64 h-16 bg-pastel-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-        <div className="flex flex-col-reverse md:flex-row justify-between gap-8 md:gap-12 my-8 md:m-16">
+        <div className="flex flex-col-reverse md:flex-row md:items-center xl:items-start justify-between gap-8 md:gap-8 desktop:gap-12 my-8 md:my-12 desktop:m-16">
           
           {/* Left Column: Text & Info */}
-          <div className="flex-1 text-center md:text-left">
+          <div className="flex-1 min-w-0 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-slate-500 mb-2 text-xs md:text-sm border border-white/50">
               <MapPin size={14} className="text-pastel-500" />
               <span>Arlington, Virginia (Northern Virginia)</span>
@@ -40,7 +42,7 @@ const Hero: React.FC = () => {
               <span className="text-xs md:text-sm align-middle ml-0 md:ml-2">& Actress</span>
             </h2>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-slate-800 leading-none mb-4">
+            <h1 className="text-5xl md:text-6xl desktop:text-7xl xl:text-8xl font-serif text-slate-800 leading-none mb-4">
               Soraya <br />
               <span className="italic text-slate-600">Schwarzenecker</span>
             </h1>
@@ -108,7 +110,7 @@ const Hero: React.FC = () => {
                <div className="flex flex-col items-center md:items-start gap-2">
                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Contact</span>
                  <a 
-                    href="mailto:sorayacreates.ugc@gmail.com" 
+                    href="mailto:soraya@soraya-schwarzenecker.com" 
                     className="text-slate-400 hover:text-slate-600 transition-all transform hover:scale-110"
                     title="Email Me"
                   >
@@ -125,7 +127,7 @@ const Hero: React.FC = () => {
             {/* Buttons */}
             <div className="flex justify-center md:justify-start">
                 <a 
-                  href="mailto:sorayacreates.ugc@gmail.com"
+                  href="mailto:soraya@soraya-schwarzenecker.com"
                   className="bg-slate-800 text-white px-10 py-4 rounded-full font-medium text-lg shadow-lg hover:bg-slate-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 group"
                 >
                   Work With Me
@@ -134,9 +136,9 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Image */}
-          <div className="flex-1 w-2/3 md:w-full max-w-md md:max-w-lg relative group mx-auto md:mx-0">
-             <div className="absolute inset-0 bg-pastel-200 rounded-[3rem] transform rotate-3 scale-105 z-0"></div>
-             <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl aspect-[3/4] bg-slate-200">
+          <div className="relative group mx-auto md:mx-0 w-2/3 sm:w-1/2 md:w-[clamp(15rem,30vw,20rem)] desktop:w-[21rem] xl:w-[23rem] shrink-0">
+             <div className="absolute inset-0 rounded-[2.75rem] bg-gradient-to-b from-pastel-200 to-blue-200/80 transform translate-x-3 translate-y-3 md:translate-x-3 md:translate-y-3 desktop:translate-x-4 desktop:translate-y-4 rotate-2 z-0"></div>
+             <div className="relative z-10 rounded-[2.75rem] overflow-hidden border-4 border-white shadow-[0_24px_60px_-24px_rgba(15,23,42,0.5)] aspect-[3/4] bg-slate-200">
                 <img 
                   src={heroImage} 
                   alt="Soraya Schwarzenecker" 

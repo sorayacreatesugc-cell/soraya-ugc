@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Camera, X } from 'lucide-react';
 
+const driveImage = (id: string) => `https://drive.google.com/uc?export=view&id=${id}`;
+
 const About: React.FC = () => {
   // State for images
   const [aboutImages, setAboutImages] = useState([
-    "https://lh3.googleusercontent.com/d/1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_", 
+    driveImage("1JONxl1YlXFdWMawKC42RhBAhOwjBFvR_"),
     "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", 
     "https://lh3.googleusercontent.com/pw/AP1GczMMzIPYOTwsWNc4ZCHXJeEWn7NRC7qWN-2Yy7Z_D0_d5QziPVYpqX0_kBLWo-YKQyT_B9jXys6yrupmfQgxVfd0EhDjVDlCTwPiKY5GlIWgCscI7fdYkcUIOV5VmaQJQ2oh1ou3FJrChfPB3JuXM3NOiQ=w1114-h1486-s-no-gm?authuser=0", 
     "https://lh3.googleusercontent.com/pw/AP1GczOw79iTqoYDZT8OCvoB8I8amgPOE0pYYc-jCnXw2QxfmPyxFuy10Sdus1-nEcL0MGW0KYbNwXa4a8djgxVD7qf_IaXuCrYeDzf--FmEKXTF9E6skGLS1FoO0RpvDPf0wZuGlJU5OeA64_Cn9ECTOZidhg=w838-h1490-s-no-gm?authuser=0",  
     "https://lh3.googleusercontent.com/pw/AP1GczOL5-usPK_Hf0jstY3YuBJh24yTkjVNOF79CzCN4O-H9Xoh-2sAQFQphPUO4dvgKhAZi1RC6uBZ5XNuz8Px8j19lCevRtxnNBNYaHtL4xy9c2uOEDlRffw9G4dXxRp9ifSbB7fmcp6P0v-30AhPP7_-2Q=w940-h1670-s-no-gm?authuser=0",
-    "https://lh3.googleusercontent.com/d/1ZJs-mmdQ8SZqtUK7bl208C4-YwwO829K"
+    driveImage("1ZJs-mmdQ8SZqtUK7bl208C4-YwwO829K")
   ]);
   
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -52,7 +54,7 @@ const About: React.FC = () => {
       <div className="max-w-[90rem] mx-auto px-4 md:px-8">
         
         {/* DESKTOP LAYOUT (Hidden on mobile) */}
-        <div className="hidden md:flex flex-row gap-6 lg:gap-16 items-start">
+        <div className="hidden lg:flex flex-row gap-6 lg:gap-16 items-start">
              {/* Text Side */}
             <div className="w-[40%] sticky top-24 z-10">
                 <h2 className="text-6xl font-serif text-slate-800 mb-10 text-left relative inline-block">
@@ -151,56 +153,56 @@ const About: React.FC = () => {
             </div>
         </div>
 
-        {/* MOBILE LAYOUT (Visible only on md hidden) - REVERTED TO SIDE-BY-SIDE */}
-        <div className="md:hidden flex flex-col mt-4">
-             <h2 className="text-4xl font-serif text-slate-800 mb-6 relative z-20">
+        {/* MOBILE/TABLET LAYOUT (Visible below lg) - REVERTED TO SIDE-BY-SIDE */}
+        <div className="lg:hidden flex flex-col mt-4">
+             <h2 className="text-4xl sm:text-5xl font-serif text-slate-800 mb-6 relative z-20">
                  About Me
                  <div className="w-16 h-1 bg-pastel-300 mt-2 rounded-full"></div>
              </h2>
 
-            <div className="flex flex-row gap-3 items-start">
+            <div className="flex flex-row gap-3 sm:gap-5 items-start">
                 {/* Left Side: Text Cards (Vertical Column) */}
                 <div className="w-[60%] flex flex-col gap-3">
                      {/* 1. Bilingual */}
-                     <div className="bg-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
-                         <div className="text-2xl mb-1">🌍</div>
-                         <h4 className="font-bold text-slate-800 text-sm mb-1">Bilingual (English & German)</h4>
-                         <p className="text-slate-600 text-xs leading-tight">UGC tailored for international and European markets</p>
+                     <div className="bg-pastel-50 p-4 sm:p-5 rounded-xl border border-pastel-200 shadow-sm">
+                         <div className="text-2xl sm:text-3xl mb-1">🌍</div>
+                         <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">Bilingual (English & German)</h4>
+                         <p className="text-slate-600 text-xs sm:text-sm leading-tight">UGC tailored for international and European markets</p>
                      </div>
 
                      {/* 2. Vegan */}
-                     <div className="bg-white p-4 rounded-xl border-2 border-slate-100 shadow-sm">
-                         <div className="text-2xl mb-1">🌱</div>
-                         <h4 className="font-bold text-slate-800 text-sm mb-1">Vegan lifestyle</h4>
-                         <p className="text-slate-600 text-xs leading-tight">Great fit for plant-based, wellness, and conscious brands</p>
+                     <div className="bg-white p-4 sm:p-5 rounded-xl border-2 border-slate-100 shadow-sm">
+                         <div className="text-2xl sm:text-3xl mb-1">🌱</div>
+                         <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">Vegan lifestyle</h4>
+                         <p className="text-slate-600 text-xs sm:text-sm leading-tight">Great fit for plant-based, wellness, and conscious brands</p>
                      </div>
 
                      {/* 3. Dramatic Arts */}
-                     <div className="bg-gradient-to-br from-white to-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
-                         <div className="text-2xl mb-1">🎭</div>
-                         <h4 className="font-bold text-slate-800 text-sm mb-1">Trained in Dramatic Arts</h4>
-                         <p className="text-slate-700 text-xs leading-tight">Strong on-camera presence, storytelling, and confident delivery</p>
+                     <div className="bg-gradient-to-br from-white to-pastel-50 p-4 sm:p-5 rounded-xl border border-pastel-200 shadow-sm">
+                         <div className="text-2xl sm:text-3xl mb-1">🎭</div>
+                         <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">Trained in Dramatic Arts</h4>
+                         <p className="text-slate-700 text-xs sm:text-sm leading-tight">Strong on-camera presence, storytelling, and confident delivery</p>
                      </div>
 
                      {/* 4. Married Creator */}
-                     <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <div className="text-2xl mb-1">💍</div>
-                        <h4 className="font-bold text-slate-800 text-sm mb-1">Married creator</h4>
-                        <p className="text-slate-600 text-xs leading-tight">(My husband is also a creator and can appear in content!)</p>
+                     <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div className="text-2xl sm:text-3xl mb-1">💍</div>
+                        <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">Married creator</h4>
+                        <p className="text-slate-600 text-xs sm:text-sm leading-tight">(My husband is also a creator and can appear in content!)</p>
                      </div>
 
                      {/* 5. World Traveler */}
-                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <div className="text-2xl mb-1">✈️</div>
-                        <h4 className="font-bold text-slate-800 text-sm mb-1">World traveler</h4>
-                        <p className="text-slate-600 text-xs leading-tight">Always planning my next adventure — this year through Europe (Austria, Switzerland & more). I’d love to bring your product along for the journey!</p>
+                     <div className="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <div className="text-2xl sm:text-3xl mb-1">✈️</div>
+                        <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">World traveler</h4>
+                        <p className="text-slate-600 text-xs sm:text-sm leading-tight">Always planning my next adventure — this year through Europe (Austria, Switzerland & more). I’d love to bring your product along for the journey!</p>
                      </div>
 
                      {/* 6. Outdoor Obsessed */}
-                     <div className="bg-pastel-50 p-4 rounded-xl border border-pastel-200 shadow-sm">
-                        <div className="text-2xl mb-1">🌊</div>
-                        <h4 className="font-bold text-slate-800 text-sm mb-1">Outdoor-obsessed</h4>
-                        <p className="text-slate-600 text-xs leading-tight">Hiking, surfing, and active lifestyle content in natural settings</p>
+                     <div className="bg-pastel-50 p-4 sm:p-5 rounded-xl border border-pastel-200 shadow-sm">
+                        <div className="text-2xl sm:text-3xl mb-1">🌊</div>
+                        <h4 className="font-bold text-slate-800 text-sm sm:text-base mb-1">Outdoor-obsessed</h4>
+                        <p className="text-slate-600 text-xs sm:text-sm leading-tight">Hiking, surfing, and active lifestyle content in natural settings</p>
                      </div>
                 </div>
 

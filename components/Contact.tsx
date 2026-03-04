@@ -16,13 +16,13 @@ const Contact: React.FC = () => {
               <h3 className="text-xl font-semibold text-slate-800 border-b border-pastel-200 pb-2">Contact Info</h3>
               
               {/* Email - Universal */}
-              <a href="mailto:sorayacreates.ugc@gmail.com" className="flex items-center gap-4 text-slate-600 hover:text-pastel-600 transition-colors bg-white p-4 rounded-xl shadow-sm border border-transparent hover:border-pastel-200">
+              <a href="mailto:soraya@soraya-schwarzenecker.com" className="flex items-center gap-4 text-slate-600 hover:text-pastel-600 transition-colors bg-white p-4 rounded-xl shadow-sm border border-transparent hover:border-pastel-200">
                 <div className="bg-pastel-100 p-2 rounded-full text-pastel-600">
                   <Mail size={20} />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-pastel-500 uppercase">Email</span>
-                  <span className="break-all font-medium">sorayacreates.ugc@gmail.com</span>
+                  <span className="break-all font-medium">soraya@soraya-schwarzenecker.com</span>
                 </div>
               </a>
 
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
                   I'm currently accepting new brand partnerships and acting projects.
                 </p>
                 <a 
-                  href="mailto:sorayacreates.ugc@gmail.com"
+                  href="mailto:soraya@soraya-schwarzenecker.com"
                   className="inline-flex items-center gap-3 bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-slate-700 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group"
                 >
                   Work with me
