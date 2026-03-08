@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, Check, X } from 'lucide-react';
 import { PortfolioItem } from '../types';
+import { PORTFOLIO_IMAGE_SOURCES } from '@/constants/images';
 
 // Specific video items with the requested labels
 const videoItems = [
@@ -46,37 +47,37 @@ const imageItems: PortfolioItem[] = [
   {
     id: 1,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczPgHYryFBVbu0WKyMCoU8K-0gJnfXpBlnE4y2zZmWwjzkLcHPzZ_xUU1ZpGb1Zs-TK0s12a_orHkSWpI1icklV5EUPYRV1o_qVmNcVIXP6yXQseu-6YkaMSoDdIf1nEJd11NvrkZ73EmKCvIoyfwTnZKw=w1170-h1486-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[0],
     caption: 'Lifestyle'
   },
   {
     id: 2,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczMGmbMT_wuiU8N9ByOpm79wIR304_iJ5aMRp4rJdDIRnaBvbY4GuKuUW73SEdJW71QcyOmMSTpM8LidfTjFv2HgiMQs1aWyWnfXbY7zk1dbyidg3d96pXMRMMxRfl5Z4gyvfBP3qxK3fHVNuJAu3bqUVA=w938-h1467-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[1],
     caption: 'Travel'
   },
   {
     id: 3,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczNx_H6fb3t8HRLvZ0zbLXAdNWjBd568t918Py6_yhlIQzudawH_dVM-A7l6lUUyx2hdmN9Rd90uTPzCKdNr0GLRDJwZazv_pjmCk4d_3by0xCw1n3vtys0g8gT3bW9uV99o-ho0ecNXED_9G63-J_nG9w=w1118-h1486-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[2],
     caption: 'Fashion'
   },
   {
     id: 4,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczMj_UITBB8cO3meU4Kx8LOZiSO_vVIi-cGFBGGlWq2XCXQV0DB1xNiis4cgsYqIOw9CnvFT2rXUNvYeBaJPY5JGx9jtL1Or7ZvFMfaDNIi0GR4N2KLerYJIOjQGsMTJTaw1s0j-urWL4gHsAaZnsrFScA=w876-h1486-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[3],
     caption: 'Product'
   },
   {
     id: 5,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczNVkmqTZLyDhmJ9M5ut-dlgCi02-n90B7iTiCwvfGdMKLV6nlRl_9YqCjUm1_2AyWiMoz99hdzCf7WFGhqQUAG1F2ZmE6rnWf-wvniNJd--HU0hijcizWBinq8_6hzFfQo7wm4EnDz-XkGqA8g9rH3VOg=w864-h1486-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[4],
     caption: 'Aesthetic'
   },
   {
     id: 6,
     type: 'image',
-    src: 'https://lh3.googleusercontent.com/pw/AP1GczMOn2q11KxQJe9wpD6Z0hF0znrx_7uUNqNj_GaldvDIuibCnctEo32D05JJEjp-xtVnpM5NYB4wyCvEliaaOMJibbQDW040qj4qsXHtjrUegHuh8PKUle75Ojcxr2vDgRv7suXN2yb82h90ySr6c9YUDQ=w1060-h1448-s-no-gm?authuser=0',
+    src: PORTFOLIO_IMAGE_SOURCES[5],
     caption: 'Vlog'
   }
 ];

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FileText, Image as ImageIcon, ArrowRight, X, Play, Eye, Instagram, Youtube } from 'lucide-react';
-
-const headshotFallback = "https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o";
+import { ACTING_HEADSHOT_FALLBACK, ACTING_HEADSHOTS } from '@/constants/images';
 
 const Acting: React.FC = () => {
   const [showDemoReel, setShowDemoReel] = useState(false);
@@ -10,14 +9,7 @@ const Acting: React.FC = () => {
   const demoReelId = "K--77wBWim0";
 
   // Headshots Gallery
-  const headshots = [
-    "https://lh3.googleusercontent.com/d/1XbT59iQUU0-kAGBbqor1sxDgydY9St7o", // Top (Requested)
-    "https://lh3.googleusercontent.com/pw/AP1GczO3y9Fahl8SWKCoHh5PJovEwsTLiXpyRHIX7hPwPLdcHP2lJY204u2r_z-KKhpDL-8X-QTqa6Rdk8dTvMl6OlW5tnKLvMWqjx_S3E1zLP6B0WWLXxby_56BJFcVP_h4wMs-uUndZehsGV0ww_ZPbUmhdw=w1025-h765-s-no-gm?authuser=0", // Recent Headshot
-    "https://lh3.googleusercontent.com/pw/AP1GczMMzIPYOTwsWNc4ZCHXJeEWn7NRC7qWN-2Yy7Z_D0_d5QziPVYpqX0_kBLWo-YKQyT_B9jXys6yrupmfQgxVfd0EhDjVDlCTwPiKY5GlIWgCscI7fdYkcUIOV5VmaQJQ2oh1ou3FJrChfPB3JuXM3NOiQ=w1114-h1486-s-no-gm?authuser=0", // Third (Requested)
-    "https://lh3.googleusercontent.com/pw/AP1GczOw79iTqoYDZT8OCvoB8I8amgPOE0pYYc-jCnXw2QxfmPyxFuy10Sdus1-nEcL0MGW0KYbNwXa4a8djgxVD7qf_IaXuCrYeDzf--FmEKXTF9E6skGLS1FoO0RpvDPf0wZuGlJU5OeA64_Cn9ECTOZidhg=w838-h1490-s-no-gm?authuser=0", // New Headshot 1
-    "https://lh3.googleusercontent.com/pw/AP1GczOL5-usPK_Hf0jstY3YuBJh24yTkjVNOF79CzCN4O-H9Xoh-2sAQFQphPUO4dvgKhAZi1RC6uBZ5XNuz8Px8j19lCevRtxnNBNYaHtL4xy9c2uOEDlRffw9G4dXxRp9ifSbB7fmcp6P0v-30AhPP7_-2Q=w940-h1670-s-no-gm?authuser=0", // New Headshot 2
-    "https://lh3.googleusercontent.com/pw/AP1GczMOn2q11KxQJe9wpD6Z0hF0znrx_7uUNqNj_GaldvDIuibCnctEo32D05JJEjp-xtVnpM5NYB4wyCvEliaaOMJibbQDW040qj4qsXHtjrUegHuh8PKUle75Ojcxr2vDgRv7suXN2yb82h90ySr6c9YUDQ=w1060-h1448-s-no-gm?authuser=0"  // Bottom (Requested)
-  ];
+  const headshots = ACTING_HEADSHOTS;
 
   return (
     <section id="acting" className="py-24 bg-white border-t border-slate-100">
@@ -81,7 +73,7 @@ const Acting: React.FC = () => {
                                         className="w-full h-full object-cover object-top opacity-95"
                                         onError={(e) => {
                                           e.currentTarget.onerror = null;
-                                          e.currentTarget.src = headshotFallback;
+                                          e.currentTarget.src = ACTING_HEADSHOT_FALLBACK;
                                         }}
                                     />
                                 </div>
@@ -215,7 +207,7 @@ const Acting: React.FC = () => {
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     onError={(e) => {
                                       e.currentTarget.onerror = null;
-                                      e.currentTarget.src = headshotFallback;
+                                      e.currentTarget.src = ACTING_HEADSHOT_FALLBACK;
                                     }}
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>

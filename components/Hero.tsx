@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowDown, MapPin, Instagram, Mail, Youtube, Camera, X } from 'lucide-react';
-
-const driveImage = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
+import { HERO_DEFAULT_IMAGE, HERO_FALLBACK_IMAGE } from '@/constants/images';
 
 const Hero: React.FC = () => {
   // Initial placeholder image - pink background headshot
-  const [heroImage, setHeroImage] = useState(driveImage("1XbT59iQUU0-kAGBbqor1sxDgydY9St7o"));
+  const [heroImage, setHeroImage] = useState(HERO_DEFAULT_IMAGE);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [tempImageInput, setTempImageInput] = useState("");
 
@@ -144,7 +143,7 @@ const Hero: React.FC = () => {
                   alt="Soraya Schwarzenecker" 
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                    e.currentTarget.src = HERO_FALLBACK_IMAGE;
                   }}
                 />
              </div>
