@@ -14,11 +14,11 @@ export const ABOUT_IMAGES = [
 export const ACTING_HEADSHOT_FALLBACK = HERO_DEFAULT_IMAGE;
 export const ACTING_HEADSHOTS = [
   '/images/soraya/about-01.webp',
-  '/images/soraya/about-02.png',
-  '/images/soraya/about-03.jpg',
-  '/images/soraya/about-04.jpg',
-  '/images/soraya/about-05.jpg',
-  '/images/soraya/soap-01.png',
+  '/images/soraya/headshot-extra-01.webp',
+  '/images/soraya/headshot-extra-02.webp',
+  '/images/soraya/hero-default.jpg',
+  '/images/soraya/headshot-extra-04.webp',
+  '/images/soraya/headshot-extra-03.webp',
 ];
 
 export const PORTFOLIO_IMAGE_SOURCES = [
