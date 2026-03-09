@@ -29,3 +29,16 @@ export const PORTFOLIO_IMAGE_SOURCES = [
   '/images/soraya/portfolio-05.png',
   '/images/soraya/soap-01.png',
 ] as const;
+
+export const TRUSTED_BY_LOGOS = [
+  {
+    name: 'HelloFresh',
+    src: '/images/trusted-by/hellofresh.svg',
+    imageClassName: 'h-16 md:h-20 lg:h-24',
+  },
+  {
+    name: 'Hydracy',
+    src: '/images/trusted-by/hydracy.jpg',
+    imageClassName: 'h-[4.5rem] md:h-24 lg:h-28 rounded-xl',
+  },
+] as const;

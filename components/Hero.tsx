@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowDown, MapPin, Instagram, Mail, Youtube, Camera, X } from 'lucide-react';
 import { HERO_DEFAULT_IMAGE, HERO_FALLBACK_IMAGE } from '@/constants/images';
+import TrustedBy from './TrustedBy';
 
 const Hero: React.FC = () => {
   // Initial placeholder image - pink background headshot
@@ -150,6 +151,8 @@ const Hero: React.FC = () => {
           </div>
 
         </div>
+
+        <TrustedBy embedded />
       </div>
 
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-400 hidden md:block">
