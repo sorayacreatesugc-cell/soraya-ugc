@@ -41,4 +41,14 @@ export const TRUSTED_BY_LOGOS = [
     src: '/images/trusted-by/hydracy.jpg',
     imageClassName: 'h-[4.5rem] md:h-24 lg:h-28 rounded-xl',
   },
+  {
+    name: 'Nerd Wallet',
+    src: '/images/trusted-by/nerd-wallet.webp',
+    imageClassName: 'h-16 md:h-20 lg:h-24',
+  },
+  {
+    name: 'Eco Essence Nutrition',
+    src: '/images/trusted-by/eco-essence-nutrition.png',
+    imageClassName: 'h-16 md:h-20 lg:h-24',
+  }
 ] as const;

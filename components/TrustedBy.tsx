@@ -10,7 +10,7 @@ const TrustedBy: React.FC<TrustedByProps> = ({ embedded = false }) => {
     return (
       <div
         aria-labelledby="trusted-by-heading"
-        className="mt-8 md:mt-10 max-w-2xl mx-auto"
+        className="mt-4 md:mt-5 max-w-2xl mx-auto"
       >
         <h2
           id="trusted-by-heading"
