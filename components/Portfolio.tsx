@@ -12,34 +12,48 @@ const videoItems = [
     caption: 'UGC Short Example', 
     label: 'Travel'
   },
+    {
+    id: 2,
+    src: 'https://img.youtube.com/vi/XkLyonNBTJ8/maxresdefault.jpg',
+    link: 'https://youtube.com/shorts/XkLyonNBTJ8?feature=share',
+    caption: 'Nerd Wallet UGC',
+    label: 'Finances'
+  },
   { 
-    id: 4, 
+    id: 3, 
     src: 'https://img.youtube.com/vi/_x627w4h9l8/maxresdefault.jpg', 
     link: 'https://youtube.com/shorts/_x627w4h9l8?feature=share',
     caption: 'App Showcase', 
     label: 'Apps'
   },
   { 
-    id: 2, 
+    id: 4, 
     src: 'https://img.youtube.com/vi/eNpEmXCd18k/maxresdefault.jpg', 
     link: 'https://youtube.com/shorts/eNpEmXCd18k?feature=share',
     caption: 'Fashion Haul', 
     label: 'Sport & Fashion'
   },
   { 
-    id: 3, 
+    id: 5, 
     src: 'https://img.youtube.com/vi/27aA1428Gkc/maxresdefault.jpg', 
     link: 'https://youtube.com/shorts/27aA1428Gkc?feature=share',
     caption: 'Product Demo', 
     label: 'Home'
   },
   { 
-    id: 5, 
+    id: 6, 
     src: 'https://img.youtube.com/vi/nuz3XjctcNU/maxresdefault.jpg', 
     link: 'https://youtube.com/shorts/nuz3XjctcNU?feature=share',
     caption: 'Aesthetic Vlog', 
     label: 'Lifestyle'
   },
+  // {
+  //   id: 6,
+  //   src: 'https://img.youtube.com/vi/tnNsz89zNf4/maxresdefault.jpg',
+  //   link: 'https://youtube.com/shorts/tnNsz89zNf4?feature=share',
+  //   caption: 'UGC Introduction',
+  //   label: 'UGC Introduction'
+  // },
 ];
 
 // Updated image items with photos
