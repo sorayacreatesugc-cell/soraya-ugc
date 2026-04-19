@@ -79,7 +79,7 @@ const imageItems: PortfolioItem[] = [
   {
     id: 4,
     type: 'image',
-    src: PORTFOLIO_IMAGE_SOURCES[3],
+    src: PORTFOLIO_IMAGE_SOURCES[6],
     caption: 'Product'
   },
   {
@@ -91,7 +91,7 @@ const imageItems: PortfolioItem[] = [
   {
     id: 6,
     type: 'image',
-    src: PORTFOLIO_IMAGE_SOURCES[5],
+    src: PORTFOLIO_IMAGE_SOURCES[7],
     caption: 'Vlog'
   }
 ];

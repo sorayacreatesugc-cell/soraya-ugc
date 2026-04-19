@@ -28,6 +28,8 @@ export const PORTFOLIO_IMAGE_SOURCES = [
   '/images/soraya/portfolio-04.jpg',
   '/images/soraya/portfolio-05.png',
   '/images/soraya/soap-01.png',
+  '/images/soraya/hydracy.jpg',
+  '/images/soraya/eco-essence-with-soraya.jpg'
 ] as const;
 
 export const TRUSTED_BY_LOGOS = [
