@@ -5,53 +5,60 @@ import { PORTFOLIO_IMAGE_SOURCES } from '@/constants/images';
 
 // Specific video items with the requested labels
 const videoItems = [
-   { 
-    id: 1, 
-    src: 'https://img.youtube.com/vi/wO2uhN7Q4x0/maxresdefault.jpg', 
-    link: 'https://www.youtube.com/shorts/wO2uhN7Q4x0?feature=share',
-    caption: 'UGC Testimonial Example', 
-    label: 'Testimonial'
-  },
-  { 
-    id: 2, 
-    src: 'https://img.youtube.com/vi/_P9ekwqLHzI/maxresdefault.jpg', 
-    link: 'https://youtube.com/shorts/_P9ekwqLHzI?feature=share',
-    caption: 'UGC Short Example', 
-    label: 'Travel Vlog Style'
-  },
-    {
-    id: 3,
+  {
+    id: 1,
     src: 'https://img.youtube.com/vi/XkLyonNBTJ8/maxresdefault.jpg',
     link: 'https://youtube.com/shorts/XkLyonNBTJ8?feature=share',
     caption: 'Nerd Wallet UGC',
     label: 'Conversational Testimonial'
   },
-  { 
-    id: 4, 
-    src: 'https://img.youtube.com/vi/_x627w4h9l8/maxresdefault.jpg', 
-    link: 'https://youtube.com/shorts/_x627w4h9l8?feature=share',
-    caption: 'App Showcase', 
-    label: 'Skit'
-  },
-  { 
-    id: 5, 
-    src: 'https://img.youtube.com/vi/eNpEmXCd18k/maxresdefault.jpg', 
-    link: 'https://youtube.com/shorts/eNpEmXCd18k?feature=share',
-    caption: 'Fashion Haul', 
-    label: 'Get Ready With Me - Dance'
-  },
-  { 
-    id: 6, 
-    src: 'https://img.youtube.com/vi/27aA1428Gkc/maxresdefault.jpg', 
-    link: 'https://youtube.com/shorts/27aA1428Gkc?feature=share',
-    caption: 'Product Demo', 
+  {
+    id: 2,
+    src: 'https://img.youtube.com/vi/CrN7G-mv9gI/maxresdefault.jpg',
+    link: 'https://www.youtube.com/shorts/CrN7G-mv9gI',
+    caption: 'Product Review',
     label: 'Product Review'
   },
-  { 
-    id: 7, 
-    src: 'https://img.youtube.com/vi/nuz3XjctcNU/maxresdefault.jpg', 
+  {
+    id: 3,
+    src: 'https://img.youtube.com/vi/wO2uhN7Q4x0/maxresdefault.jpg',
+    link: 'https://www.youtube.com/shorts/wO2uhN7Q4x0?feature=share',
+    caption: 'UGC Testimonial Example',
+    label: 'Testimonial'
+  },
+  {
+    id: 4,
+    src: 'https://img.youtube.com/vi/_P9ekwqLHzI/maxresdefault.jpg',
+    link: 'https://youtube.com/shorts/_P9ekwqLHzI?feature=share',
+    caption: 'UGC Short Example',
+    label: 'Travel Vlog Style'
+  },
+  {
+    id: 5,
+    src: 'https://img.youtube.com/vi/_x627w4h9l8/maxresdefault.jpg',
+    link: 'https://youtube.com/shorts/_x627w4h9l8?feature=share',
+    caption: 'App Showcase',
+    label: 'Skit'
+  },
+  {
+    id: 6,
+    src: 'https://img.youtube.com/vi/eNpEmXCd18k/maxresdefault.jpg',
+    link: 'https://youtube.com/shorts/eNpEmXCd18k?feature=share',
+    caption: 'Fashion Haul',
+    label: 'Get Ready With Me - Dance'
+  },
+  {
+    id: 7,
+    src: 'https://img.youtube.com/vi/27aA1428Gkc/maxresdefault.jpg',
+    link: 'https://youtube.com/shorts/27aA1428Gkc?feature=share',
+    caption: 'Product Demo',
+    label: 'Product Review'
+  },
+  {
+    id: 8,
+    src: 'https://img.youtube.com/vi/nuz3XjctcNU/maxresdefault.jpg',
     link: 'https://youtube.com/shorts/nuz3XjctcNU?feature=share',
-    caption: 'Aesthetic Vlog', 
+    caption: 'Aesthetic Vlog',
     label: 'Night Routine'
   },
   // {
